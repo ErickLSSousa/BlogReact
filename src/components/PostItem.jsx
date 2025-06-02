@@ -1,4 +1,4 @@
-import { link } from 'React-router-doom'
+import { Link } from "react-router-dom";
 
 function PostItem({ post, autor }) {
     return (<li>
