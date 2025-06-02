@@ -9,3 +9,5 @@ function PostItem({ post, autor }) {
     </li>
     );
 }
+
+export default PostItem
