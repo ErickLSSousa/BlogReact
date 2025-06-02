@@ -1,12 +1,21 @@
 import PostList from '../components/PostList';
+import styles from  './components/home.module.css';
+
 
 function Home() {
     return (
-        <div>
-            <h1>Bem-Vindo ao Blog PostFlix</h1>
-            <PostList />
+        <div className={styles.container}>
+            <header>
+                <h1>Bem-Vindo ao Blog PostFlix</h1>
+            </header>
+            <main>
+                <PostList />
+            </main>
+            <footer>
+
+            </footer>
         </div>
     );
 }
 
-export default home;
+export default Home;
