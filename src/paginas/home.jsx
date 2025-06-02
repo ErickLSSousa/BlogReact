@@ -1,5 +1,5 @@
 import PostList from '../components/PostList';
-import styles from  './components/home.module.css';
+import styles from  '../styles/home.module.css';
 
 
 function Home() {
