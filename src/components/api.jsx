@@ -1,15 +1,12 @@
-// src/services/api.js
 import axios from 'axios';
 
-// Define a base da API JSONPlaceholder
 const api = axios.create({
   baseURL: 'https://jsonplaceholder.typicode.com',
 });
 
-// Função para buscar os usuários
 export const buscarUsuarios = async () => {
   try {
-    const resposta = await api.get('/users'); // endpoint correto na JSONPlaceholder
+    const resposta = await api.get('/users');
     return resposta.data;
   } catch (error) {
     console.error('Erro ao buscar usuários:', error);
@@ -17,7 +14,6 @@ export const buscarUsuarios = async () => {
   }
 };
 
-// Função para buscar os posts
 export const buscarPosts = async () => {
   try {
     const resposta = await api.get('/posts');
@@ -28,7 +24,6 @@ export const buscarPosts = async () => {
   }
 };
 
-// Função para buscar um post específico
 export const buscarPostPorId = async (id) => {
   try {
     const resposta = await api.get(`/posts/${id}`);
@@ -39,7 +34,6 @@ export const buscarPostPorId = async (id) => {
   }
 };
 
-// Função para buscar um usuário específico
 export const buscarUsuarioPorId = async (id) => {
   try {
     const resposta = await api.get(`/users/${id}`);
