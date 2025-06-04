@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { fetchPost, fetchUser } from '../serviços/api';
+import { buscarPosts, buscarUsuarios } from '../components/api';
 
 function PostPage() {
   const { id } = useParams();

@@ -1,12 +1,16 @@
 import axios from 'axios';
 
-const api = axios.create({
-  baseURL: 'https://jsonplaceholder.typicode.com',
+const apipost= axios.create({
+  baseURL: 'https://jsonplaceholder.typicode.com/posts',
+});
+
+const apiuser = axios.create({
+  baseURL: 'https://jsonplaceholder.typicode.com/posts',
 });
 
 export const buscarUsuarios = async () => {
   try {
-    const resposta = await api.get('/users');
+    const resposta = await apiuser.get('/users');
     return resposta.data;
   } catch (error) {
     console.error('Erro ao buscar usuários:', error);
@@ -16,7 +20,7 @@ export const buscarUsuarios = async () => {
 
 export const buscarPosts = async () => {
   try {
-    const resposta = await api.get('/posts');
+    const resposta = await apipost.get('/posts');
     return resposta.data;
   } catch (error) {
     console.error('Erro ao buscar posts:', error);
@@ -26,7 +30,7 @@ export const buscarPosts = async () => {
 
 export const buscarPostPorId = async (id) => {
   try {
-    const resposta = await api.get(`/posts/${id}`);
+    const resposta = await apipost.get(`/posts/${id}`);
     return resposta.data;
   } catch (error) {
     console.error('Erro ao buscar o post:', error);
@@ -36,7 +40,7 @@ export const buscarPostPorId = async (id) => {
 
 export const buscarUsuarioPorId = async (id) => {
   try {
-    const resposta = await api.get(`/users/${id}`);
+    const resposta = await apiuser.get(`/users/${id}`);
     return resposta.data;
   } catch (error) {
     console.error('Erro ao buscar o usuário:', error);
@@ -44,4 +48,3 @@ export const buscarUsuarioPorId = async (id) => {
   }
 };
 
-export default api;
